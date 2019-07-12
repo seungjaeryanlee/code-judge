@@ -37,8 +37,16 @@ def judge():
 
 def show():
     """Print problem in command line."""
-    problem_id = sys.argv[2]
+    if ':' in sys.argv[2]:
+        problem_id = sys.argv[2]
+    else:
+        filepath = sys.argv[2]
+        folderpath, filename = '/'.join(filepath.split('/')[:-1]), '.'.join(filepath.split('/')[-1].split('.')[:-1])
+        sys.path.insert(0, folderpath)
 
+        solution_module = importlib.import_module(filename)
+        solution_function = solution_module.solution
+        problem_id = solution_function.problem_id
 
     if problem_id == 'project_euler:1':
         print("")
