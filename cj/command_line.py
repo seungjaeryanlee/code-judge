@@ -10,14 +10,20 @@ def evaluate():
     sys.path.insert(0, folderpath)
 
     solution_module = importlib.import_module(filename)
-    solution_function = solution_module.solution
+    solution_class = solution_module.Solution
+    solution_instance = solution_class()
+    solution_function = solution_instance.solution
 
-    try:
-        answer = solution_function()
-    except:
-        print('[FAIL] An exception occurred.')
-    else:
-        if answer == 233168:
-            print('[SUCCESS] Correct answer: 233168')
+    if solution_instance.problem_id == 'project_euler:1':
+        print('Detected Project Euler Problem 1')
+        try:
+            answer = solution_function()
+        except:
+            print('[FAIL] An exception occurred.')
         else:
-            print('[SUCCESS] The answer {} is incorrect'.format(answer))
+            if answer == 233168:
+                print('[SUCCESS] Correct answer: 233168')
+            else:
+                print('[SUCCESS] The answer {} is incorrect'.format(answer))
+    else:
+        print('Problem ID not recognized')
