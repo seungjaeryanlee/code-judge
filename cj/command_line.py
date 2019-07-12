@@ -1,8 +1,10 @@
+"""Implement console scripts in setup.py."""
 import importlib
 import sys
 
 
-def evaluate():
+def judge():
+    """Judge specified file."""
     filepath = sys.argv[1]
     folderpath, filename = '/'.join(filepath.split('/')[:-1]), '.'.join(filepath.split('/')[-1].split('.')[:-1])
     sys.path.insert(0, folderpath)

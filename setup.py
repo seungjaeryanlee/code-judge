@@ -1,5 +1,6 @@
 from setuptools import setup
 
+
 setup(
     name='code-judge',
     version='0.0.0',
@@ -12,7 +13,7 @@ setup(
     zip_safe=False,
     entry_points = {
         'console_scripts': [
-            'judge = cj.command_line:evaluate',
+            'judge = cj.command_line:judge',
         ],
     },
 )
