@@ -13,7 +13,7 @@ setup(
     zip_safe=False,
     entry_points = {
         'console_scripts': [
-            'judge = cj.command_line:judge',
+            'cj = cj.command_line:cj',
         ],
     },
 )
