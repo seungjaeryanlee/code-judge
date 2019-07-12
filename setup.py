@@ -8,11 +8,11 @@ setup(
     author='Seungjae Ryan Lee',
     author_email='seungjaeryanlee@gmail.com',
     license='MIT',
-    packages=['judge'],
+    packages=['cj'],
     zip_safe=False,
     entry_points = {
         'console_scripts': [
-            'judge = judge.command_line:evaluate',
+            'judge = cj.command_line:evaluate',
         ],
     },
 )

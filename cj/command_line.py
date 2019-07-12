@@ -1,7 +1,7 @@
 import importlib
 import sys
 
-import judge
+import cj
 
 
 def evaluate():
